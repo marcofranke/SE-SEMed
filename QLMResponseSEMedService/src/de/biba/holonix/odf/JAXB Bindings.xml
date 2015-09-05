@@ -1,0 +1,10 @@
+<jxb:bindings version="2.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<jxb:bindings schemaLocation="odf.xsd" node="/xsd:schema">
+		<jxb:bindings node="//xsd:complexType[@name='InfoItemType']">
+			<jxb:bindings node=".//xsd:attribute[@name='name']">
+				<jxb:property name="optionalName" />
+			</jxb:bindings>
+		</jxb:bindings>
+	</jxb:bindings>
+</jxb:bindings>

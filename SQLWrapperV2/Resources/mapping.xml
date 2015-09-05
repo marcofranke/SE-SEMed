@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Mapping>
+    <ClassMapping className="http://www.biba.uni-bremen.de/Ontology.owl#Kunde">
+        <Column valueType="numeric">kunde.id</Column>
+        <Table>kunde</Table>
+    </ClassMapping>
+    
+    <ClassMapping className="http://www.biba.uni-bremen.de/Ontology.owl#Artikel">
+        <Column valueType="numeric">artikel.id</Column>
+        <Table>artikel</Table>
+    </ClassMapping> 
+    
+    <ClassMapping className="http://www.biba.uni-bremen.de/Ontology.owl#Bestellung">
+        <Column valueType="numeric">bestellungen.id</Column>
+        <Table>bestellungen</Table>
+    </ClassMapping>
+    
+    <ClassMapping className="http://www.biba.uni-bremen.de/Ontology.owl#Lieferadresse">
+        <Column valueType="numeric">lieferadressen.id</Column>
+        <Table>lieferadressen</Table>
+    </ClassMapping>
+    
+    <ClassMapping className="http://www.biba.uni-bremen.de/Ontology.owl#Artikelkategorie">
+        <Column valueType="numeric">artikelkategorie.id</Column>
+        <Table>artikelkategorie</Table>
+    </ClassMapping>
+	
+	<ClassMapping className="http://www.biba.uni-bremen.de/Ontology.owl#Anschrift">
+        <Column valueType="numeric">kunde.plz</Column>
+        <Column valueType="numeric">kunde.strasse</Column>
+        <Column valueType="numeric">kunde.ort</Column>
+        <Table>kunde</Table>
+    </ClassMapping>
+    
+    <ObjectPropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#HatBestellt">
+    	<SubColumn valueType="numeric">kunde.id</SubColumn>
+    	<ObColumn valueType="numeric">bestellungen.id</ObColumn>
+    	<Join joinType="left">
+			<FirstTable>kunde</FirstTable>
+			<SecondTable>bestellungen</SecondTable>
+			<JoinCondition>kunde.id = bestellungen.kunde</JoinCondition>
+		</Join>
+		<!-- <Conditions>
+			<Column>bestellungen.preis</Column>
+			<ValueType>numeric</ValueType>
+			<Value>2.2</Value>
+			<Comparator>LE</Comparator>
+		</Conditions>  -->
+    </ObjectPropertyMapping>
+    
+    <ObjectPropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#BestellteArtikel">
+    	<SubColumn valueType="numeric">bestellungen.id</SubColumn>
+    	<ObColumn valueType="numeric">artikel.id</ObColumn>
+    	<Join joinType="left">
+			<FirstTable>bestellungen</FirstTable>
+			<SecondTable>artikel</SecondTable>
+			<JoinCondition>bestellungen.artikel = artikel.id</JoinCondition>
+		</Join>
+    </ObjectPropertyMapping>
+    
+    <ObjectPropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#GehoertZurKategorie">
+    	<SubColumn valueType="numeric">artikel.id</SubColumn>
+    	<ObColumn valueType="numeric">artikelkategorie.id</ObColumn>
+    	<Join joinType="left">
+			<FirstTable>artikel</FirstTable>
+			<SecondTable>artikel_artikelkategorie</SecondTable>
+			<JoinCondition>artikel.id = artikel_artikelkategorie.artikel</JoinCondition>
+			<ThirdTable>artikelkategorie</ThirdTable>
+			<ExtendedCondition>artikel_artikelkategorie.kategorie = artikelkategorie.id</ExtendedCondition>
+		</Join>
+    </ObjectPropertyMapping>
+    
+    <ObjectPropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#UmfasstArtikel">
+    	<SubColumn valueType="numeric">artikel.id</SubColumn>
+    	<ObColumn valueType="numeric">artikelkategorie.id</ObColumn>
+    	<Join joinType="left">
+			<FirstTable>artikel</FirstTable>
+			<SecondTable>artikel_artikelkategorie</SecondTable>
+			<JoinCondition>artikel.id = artikel_artikelkategorie.artikel</JoinCondition>
+			<ThirdTable>artikelkategorie</ThirdTable>
+			<ExtendedCondition>artikel_artikelkategorie.kategorie = artikelkategorie.id</ExtendedCondition>
+		</Join>
+    </ObjectPropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#bezeichnung" unit="">
+        <SubColumn valueType="numeric">artikelkategorie.id</SubColumn>
+        <ObColumn>artikelkategorie.bezeichnung</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>artikelkategorie</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#artikelnr" unit="">
+        <SubColumn valueType="numeric">artikel.id</SubColumn>
+        <ObColumn>artikel.artikelnr</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>artikel</Table>
+    </DatatypePropertyMapping>
+	
+	<DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#preis" unit="">
+        <SubColumn valueType="numeric">artikel.id</SubColumn>
+        <ObColumn>artikel.preis</ObColumn>
+        <ObType>numeric</ObType>
+        <Table>artikel</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#beschreibung" unit="">
+        <SubColumn valueType="numeric">artikel.id</SubColumn>
+        <ObColumn>artikel.beschreibung</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>artikel</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#name" unit="">
+        <SubColumn valueType="numeric">artikel.id</SubColumn>
+        <ObColumn>artikel.name</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>artikel</Table>
+    </DatatypePropertyMapping>
+	
+	<DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#e-nummer" unit="">
+        <SubColumn valueType="numeric">artikel.id</SubColumn>
+        <ObColumn>enummern.enummer</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Join joinType="left">
+			<FirstTable>artikel</FirstTable>
+			<SecondTable>enummern</SecondTable>
+			<JoinCondition>artikel.id = enummern.artikel_id</JoinCondition>
+		</Join>
+		<Conditions>
+			<Column>artikel.preis</Column>
+			<ValueType>numeric</ValueType>
+			<Value>2.2</Value>
+			<Comparator>LE</Comparator>
+		</Conditions>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#name" unit="">
+        <SubColumn valueType="numeric">kunde.id</SubColumn>
+        <ObColumn>kunde.name</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>kunde</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#vorname" unit="">
+        <SubColumn valueType="numeric">kunde.id</SubColumn>
+        <ObColumn>kunde.vorname</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>kunde</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#strasse" unit="">
+        <SubColumn valueType="numeric">kunde.id</SubColumn>
+        <ObColumn>kunde.strasse</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>kunde</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#postleitzahl" unit="">
+        <SubColumn valueType="numeric">kunde.id</SubColumn>
+        <ObColumn>kunde.plz</ObColumn>
+        <ObType>numeric</ObType>
+        <Table>kunde</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://www.biba.uni-bremen.de/Ontology.owl#ort" unit="">
+        <SubColumn valueType="numeric">kunde.id</SubColumn>
+        <ObColumn>kunde.ort</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>kunde</Table>
+    </DatatypePropertyMapping>
+</Mapping>

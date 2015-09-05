@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+<xsd:element name="WrapperConfiguration">
+<xsd:complexType>
+	<xsd:sequence>
+		<xsd:element name="DataSource" type="DataSource" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:complexType name="DataSource">
+<xsd:sequence>
+<xsd:element name="pathToConfigFile" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="javaClassForWrapper" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>

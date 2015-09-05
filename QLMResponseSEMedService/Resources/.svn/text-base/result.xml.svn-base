@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<omi:omiEnvelope ttl="0.0" xmlns:odf="odf.xsd"
+	xmlns:omi="omi.xsd">
+	<omi:response>
+		<omi:result msgformat="odf">
+			<omi:return returnCode="200" />
+			<omi:requestId>REQ0000004</omi:requestId>
+			<omi:msg xsi:type="odf:ObjectsType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+				<odf:Object type="Composition">
+					<odf:id>07524050B</odf:id>
+					<odf:InfoItem name="Ideal_value_of_slump">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Water">
+						<odf:value>132</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_75_150">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Maximum_aggregate_size">
+						<odf:value>75</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Concrete_type">
+						<odf:value>Convencional</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Type_of_cement">
+						<odf:value>I 42.5R</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Ash">
+						<odf:value>120</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Minimum_value_of_slump">
+						<odf:value>10</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Fine_sand">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_10_19">
+						<odf:value>272</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Maximum_value_of_slump">
+						<odf:value>50</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Sand">
+						<odf:value>634</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_class">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="BASF_Pozzolith_398N">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_5_10">
+						<odf:value>235</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_19_38">
+						<odf:value>352</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_38_75">
+						<odf:value>449</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Ratio_water_cement">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Proportion_of_cement_and_ash">
+						<odf:value>50</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Sikaplast895">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Dramix_fibers">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id>07526050B</odf:id>
+					<odf:InfoItem name="Ideal_value_of_slump">
+						<odf:value>4</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Water">
+						<odf:value>143</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_75_150">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Maximum_aggregate_size">
+						<odf:value>75</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Concrete_type">
+						<odf:value>Convencional</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Type_of_cement">
+						<odf:value>I 42.5R</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Ash">
+						<odf:value>130</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Minimum_value_of_slump">
+						<odf:value>10</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Fine_sand">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_10_19">
+						<odf:value>271</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Maximum_value_of_slump">
+						<odf:value>50</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Sand">
+						<odf:value>637</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_class">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="BASF_Pozzolith_398N">
+						<odf:value>1</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_5_10">
+						<odf:value>212</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_19_38">
+						<odf:value>366</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_38_75">
+						<odf:value>444</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Ratio_water_cement">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Proportion_of_cement_and_ash">
+						<odf:value>50</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Sikaplast895">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Dramix_fibers">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id>15020050B</odf:id>
+					<odf:InfoItem name="Ideal_value_of_slump">
+						<odf:value>12</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Water">
+						<odf:value>124</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_75_150">
+						<odf:value>440</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Maximum_aggregate_size">
+						<odf:value>150</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Concrete_type">
+						<odf:value>Convencional</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Type_of_cement">
+						<odf:value>I 42.5R</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Ash">
+						<odf:value>110</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Minimum_value_of_slump">
+						<odf:value>10</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Fine_sand">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_10_19">
+						<odf:value>234</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Maximum_value_of_slump">
+						<odf:value>50</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Sand">
+						<odf:value>527</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_class">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="BASF_Pozzolith_398N">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_5_10">
+						<odf:value>186</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_19_38">
+						<odf:value>273</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_38_75">
+						<odf:value>351</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Ratio_water_cement">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Proportion_of_cement_and_ash">
+						<odf:value>50</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Sikaplast895">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Dramix_fibers">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id>Receita 233B</odf:id>
+					<odf:InfoItem name="Ideal_value_of_slump">
+						<odf:value>20</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Water">
+						<odf:value>225</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_75_150">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Maximum_aggregate_size">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Concrete_type">
+						<odf:value>Argamassa de Ligação</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Type_of_cement">
+						<odf:value>I 42.5R</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Ash">
+						<odf:value>240</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Minimum_value_of_slump">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Fine_sand">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_10_19">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Maximum_value_of_slump">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Sand">
+						<odf:value>1150</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_class">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="BASF_Pozzolith_398N">
+						<odf:value>7</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_5_10">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_19_38">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Brita_38_75">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Ratio_water_cement">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Proportion_of_cement_and_ash">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Sikaplast895">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Dramix_fibers">
+						<odf:value>0</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+			</omi:msg>
+		</omi:result>
+	</omi:response>
+</omi:omiEnvelope>

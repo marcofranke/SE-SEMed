@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY Ontology "http://www.biba.uni-bremen.de/Ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.biba.uni-bremen.de/Ontology.owl#"
+     xml:base="http://www.biba.uni-bremen.de/Ontology.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Ontology="http://www.biba.uni-bremen.de/Ontology.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="http://www.biba.uni-bremen.de/Ontology.owl">
+        <owl:versionIRI rdf:resource="http://www.biba.uni-bremen.de/Ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#BestellteArtikel -->
+
+    <owl:ObjectProperty rdf:about="&Ontology;BestellteArtikel">
+        <rdfs:range rdf:resource="&Ontology;Artikel"/>
+        <rdfs:domain rdf:resource="&Ontology;Bestellung"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#HatBestellt -->
+
+    <owl:ObjectProperty rdf:about="&Ontology;HatBestellt">
+        <rdfs:range rdf:resource="&Ontology;Bestellung"/>
+        <rdfs:domain rdf:resource="&Ontology;Kunde"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#WirdGesendetAn -->
+
+    <owl:ObjectProperty rdf:about="&Ontology;WirdGesendetAn">
+        <rdfs:domain rdf:resource="&Ontology;Bestellung"/>
+        <rdfs:range rdf:resource="&Ontology;Lieferadresse"/>
+    </owl:ObjectProperty>
+	
+	
+	
+	<!-- http://www.biba.uni-bremen.de/Ontology.owl#GehoertZurKategorie -->
+
+    <owl:ObjectProperty rdf:about="&Ontology;GehoertZurKategorie">
+        <rdfs:domain rdf:resource="&Ontology;Artikel"/>
+        <rdfs:range rdf:resource="&Ontology;Artikelkategorie"/>
+    </owl:ObjectProperty>
+	
+	
+	
+	<!-- http://www.biba.uni-bremen.de/Ontology.owl#UmfasstArtikel -->
+
+    <owl:ObjectProperty rdf:about="&Ontology;UmfasstArtikel">
+        <rdfs:domain rdf:resource="&Ontology;Artikelkategorie"/>
+        <rdfs:range rdf:resource="&Ontology;Artikel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#artikelnr -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;artikelnr">
+        <rdfs:domain rdf:resource="&Ontology;Artikel"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#beschreibung -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;beschreibung">
+        <rdfs:domain rdf:resource="&Ontology;Artikel"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#bestellzeitpunkt -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;bestellzeitpunkt">
+        <rdfs:domain rdf:resource="&Ontology;Bestellung"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#e-nummer -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;e-nummer">
+        <rdfs:domain rdf:resource="&Ontology;Artikel"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#menge -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;menge">
+        <rdfs:domain rdf:resource="&Ontology;Bestellung"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;name">
+        <rdfs:domain rdf:resource="&Ontology;Artikel"/>
+        <rdfs:domain rdf:resource="&Ontology;Kunde"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#ort -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;ort">
+        <rdfs:domain rdf:resource="&Ontology;Anschrift"/>
+        <rdfs:domain rdf:resource="&Ontology;Lieferadresse"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#postleitzahl -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;postleitzahl">
+        <rdfs:domain rdf:resource="&Ontology;Anschrift"/>
+        <rdfs:domain rdf:resource="&Ontology;Lieferadresse"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#preis -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;preis">
+        <rdfs:domain rdf:resource="&Ontology;Artikel"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#strasse -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;strasse">
+        <rdfs:domain rdf:resource="&Ontology;Anschrift"/>
+        <rdfs:domain rdf:resource="&Ontology;Lieferadresse"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#vorname -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;vorname">
+        <rdfs:domain rdf:resource="&Ontology;Kunde"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+	
+	
+	<!-- http://www.biba.uni-bremen.de/Ontology.owl#bezeichnung -->
+
+    <owl:DatatypeProperty rdf:about="&Ontology;bezeichnung">
+        <rdfs:domain rdf:resource="&Ontology;Artikelkategorie"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#Anschrift -->
+
+    <owl:Class rdf:about="&Ontology;Anschrift">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#Artikel -->
+
+    <owl:Class rdf:about="&Ontology;Artikel"/>
+    
+
+	
+	<!-- http://www.biba.uni-bremen.de/Ontology.owl#Artikelkategorie -->
+
+    <owl:Class rdf:about="&Ontology;Artikelkategorie"/>
+	
+
+	
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#Bestellung -->
+
+    <owl:Class rdf:about="&Ontology;Bestellung">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#Kunde -->
+
+    <owl:Class rdf:about="&Ontology;Kunde"/>
+    
+
+
+    <!-- http://www.biba.uni-bremen.de/Ontology.owl#Lieferadresse -->
+
+    <owl:Class rdf:about="&Ontology;Lieferadresse"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

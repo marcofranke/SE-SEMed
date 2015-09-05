@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.mediator.biba.de" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.mediator.biba.de" xmlns:intf="http://webservice.mediator.biba.de" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.mediator.biba.de" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="query">
+    <complexType>
+     <sequence>
+      <element name="jObject" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="queryResponse">
+    <complexType>
+     <sequence>
+      <element name="queryReturn" type="impl:MediatorResult"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfArrayOf_xsd_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:ArrayOf_xsd_string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MediatorResult">
+    <sequence>
+     <element name="columnNames" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="data" nillable="true" type="impl:ArrayOfArrayOf_xsd_string"/>
+    </sequence>
+   </complexType>
+   <element name="getAllConcepts">
+    <complexType/>
+   </element>
+   <element name="getAllConceptsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllConceptsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="queryAsHTML">
+    <complexType>
+     <sequence>
+      <element name="jObject" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="queryAsHTMLResponse">
+    <complexType>
+     <sequence>
+      <element name="queryAsHTMLReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllDataPropertiesByConceptName">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllDataPropertiesByConceptNameResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllDataPropertiesByConceptNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllObjectPropertiesByConceptName">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllObjectPropertiesByConceptNameResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllObjectPropertiesByConceptNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllRangesForAObjectProperties">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllRangesForAObjectPropertiesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllRangesForAObjectPropertiesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCurrentConnectedDataSources">
+    <complexType/>
+   </element>
+   <element name="getCurrentConnectedDataSourcesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getCurrentConnectedDataSourcesReturn" type="impl:LightDataSourceDescription"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="LightDataSourceDescription">
+    <sequence>
+     <element name="isConsistence" nillable="true" type="xsd:string"/>
+     <element name="nameOfClass" nillable="true" type="xsd:string"/>
+     <element name="pathOfPropertyFile" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllDataPropertiesByConceptNameRequest">
+
+      <wsdl:part element="impl:getAllDataPropertiesByConceptName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrentConnectedDataSourcesResponse">
+
+      <wsdl:part element="impl:getCurrentConnectedDataSourcesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllRangesForAObjectPropertiesResponse">
+
+      <wsdl:part element="impl:getAllRangesForAObjectPropertiesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllObjectPropertiesByConceptNameResponse">
+
+      <wsdl:part element="impl:getAllObjectPropertiesByConceptNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllConceptsRequest">
+
+      <wsdl:part element="impl:getAllConcepts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllConceptsResponse">
+
+      <wsdl:part element="impl:getAllConceptsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllDataPropertiesByConceptNameResponse">
+
+      <wsdl:part element="impl:getAllDataPropertiesByConceptNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllRangesForAObjectPropertiesRequest">
+
+      <wsdl:part element="impl:getAllRangesForAObjectProperties" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryAsHTMLRequest">
+
+      <wsdl:part element="impl:queryAsHTML" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryRequest">
+
+      <wsdl:part element="impl:query" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrentConnectedDataSourcesRequest">
+
+      <wsdl:part element="impl:getCurrentConnectedDataSources" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryAsHTMLResponse">
+
+      <wsdl:part element="impl:queryAsHTMLResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllObjectPropertiesByConceptNameRequest">
+
+      <wsdl:part element="impl:getAllObjectPropertiesByConceptName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryResponse">
+
+      <wsdl:part element="impl:queryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MediatorWebservice">
+
+      <wsdl:operation name="query">
+
+         <wsdl:input message="impl:queryRequest" name="queryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryResponse" name="queryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllConcepts">
+
+         <wsdl:input message="impl:getAllConceptsRequest" name="getAllConceptsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllConceptsResponse" name="getAllConceptsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryAsHTML">
+
+         <wsdl:input message="impl:queryAsHTMLRequest" name="queryAsHTMLRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryAsHTMLResponse" name="queryAsHTMLResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllDataPropertiesByConceptName">
+
+         <wsdl:input message="impl:getAllDataPropertiesByConceptNameRequest" name="getAllDataPropertiesByConceptNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllDataPropertiesByConceptNameResponse" name="getAllDataPropertiesByConceptNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllObjectPropertiesByConceptName">
+
+         <wsdl:input message="impl:getAllObjectPropertiesByConceptNameRequest" name="getAllObjectPropertiesByConceptNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllObjectPropertiesByConceptNameResponse" name="getAllObjectPropertiesByConceptNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllRangesForAObjectProperties">
+
+         <wsdl:input message="impl:getAllRangesForAObjectPropertiesRequest" name="getAllRangesForAObjectPropertiesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllRangesForAObjectPropertiesResponse" name="getAllRangesForAObjectPropertiesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCurrentConnectedDataSources">
+
+         <wsdl:input message="impl:getCurrentConnectedDataSourcesRequest" name="getCurrentConnectedDataSourcesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCurrentConnectedDataSourcesResponse" name="getCurrentConnectedDataSourcesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MediatorWebserviceSoapBinding" type="impl:MediatorWebservice">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="query">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllConcepts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllConceptsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllConceptsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryAsHTML">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryAsHTMLRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryAsHTMLResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllDataPropertiesByConceptName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllDataPropertiesByConceptNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllDataPropertiesByConceptNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllObjectPropertiesByConceptName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllObjectPropertiesByConceptNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllObjectPropertiesByConceptNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllRangesForAObjectProperties">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllRangesForAObjectPropertiesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllRangesForAObjectPropertiesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCurrentConnectedDataSources">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCurrentConnectedDataSourcesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCurrentConnectedDataSourcesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MediatorWebserviceService">
+
+      <wsdl:port binding="impl:MediatorWebserviceSoapBinding" name="MediatorWebservice">
+
+         <wsdlsoap:address location="http://localhost:8080/MediatorWebservice/services/MediatorWebservice"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

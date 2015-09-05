@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Mapping>
+    <ClassMapping className="http://Fitman.eu#SpecificEnabler">
+        <Column valueType="xsd:string">SpecificEnabler.id</Column>
+        <Table>SpecificEnabler</Table>
+    </ClassMapping>
+    
+    
+    
+    <DatatypePropertyMapping propertyName="http://Fitman.eu#id" unit="">
+        <SubColumn valueType="xsd:string">SpecificEnabler.id</SubColumn>
+        <ObColumn>SpecificEnabler.id</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>SpecificEnabler</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://Fitman.eu#name" unit="">
+        <SubColumn valueType="xsd:string">SpecificEnabler.id</SubColumn>
+        <ObColumn>SpecificEnabler.name</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>SpecificEnabler</Table>
+    </DatatypePropertyMapping>
+	
+	 <DatatypePropertyMapping propertyName="http://Fitman.eu#description" unit="">
+        <SubColumn valueType="xsd:string">SpecificEnabler.id</SubColumn>
+        <ObColumn>SpecificEnabler.description</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>SpecificEnabler</Table>
+    </DatatypePropertyMapping>
+	
+	 <DatatypePropertyMapping propertyName="http://Fitman.eu#link" unit="">
+        <SubColumn valueType="xsd:string">SpecificEnabler.id</SubColumn>
+        <ObColumn>SpecificEnabler.link</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>SpecificEnabler</Table>
+    </DatatypePropertyMapping>
+	
+	
+</Mapping>

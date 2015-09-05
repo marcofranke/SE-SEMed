@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WrapperConfiguration>
+
+<DataSource>
+<pathToConfigFile>C:/Resources/FitmanXMLExample/config.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.simpleXMLWrapper.XMLWrapper</javaClassForWrapper>
+</DataSource>
+
+</WrapperConfiguration>

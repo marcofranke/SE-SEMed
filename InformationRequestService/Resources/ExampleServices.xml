@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<InformationServices>
+	<Service>
+		<id>4</id>
+		<query>select ?B where {?A a &lt;SpecificEnabler&gt;. ?A &lt;name&gt;
+			?B. }</query>
+		<namespace>http://Fitman.eu</namespace>
+		<requestInterval>0</requestInterval>
+		<URLWebService>http://localhost:8080/MediatorWebservice/services/MediatorWebservice?wsdl
+		</URLWebService>
+		<OutputWrapper>
+			<javaClassForStorage>de.biba.informationrequestservice.writer.SQLTuplesOutWriter</javaClassForStorage>
+			<configurationForStorage>C:/GIT2/code/SE/BIBA/InformationRequestService/Resources/SQLWriter/properties.properties</configurationForStorage>
+		</OutputWrapper>
+	</Service>
+</InformationServices>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WrapperConfiguration>
+
+<DataSource>
+<pathToConfigFile>/var/lib/tomcat7/fitman/QLMResponseSEMedService/WEB-INF/Auto/config.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.simpleXMLWrapper.XMLWrapper</javaClassForWrapper>
+</DataSource>
+
+<!-- DataSource>
+<pathToConfigFile>/var/lib/tomcat7/fitman/QLMResponseSEMedService/WEB-INF/Auto/config.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.simpleXMLWrapper.XMLWrapper</javaClassForWrapper>
+</DataSource lokal-->
+
+<DataSource>
+<pathToConfigFile>/var/lib/tomcat7/fitman/QLMResponseSEMedService/WEB-INF/Consulgal/config.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.httpWrapper.SimpleHttpWrapper</javaClassForWrapper>
+</DataSource>
+
+
+<DataSource>
+<pathToConfigFile>/var/lib/tomcat7/fitman/QLMResponseSEMedService/WEB-INF/AIDIMA/properties.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.newSQLWrapper.SQLWrapper</javaClassForWrapper>
+</DataSource>
+
+<DataSource>
+<pathToConfigFile>C:/Resources/AIDIMA/properties.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.newSQLWrapper.SQLWrapper</javaClassForWrapper>
+</DataSource>
+
+<DataSource>
+<pathToConfigFile>C:/Resources/Consulgal/config.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.httpWrapper.SimpleHttpWrapper</javaClassForWrapper>
+</DataSource>
+
+<DataSource>
+<pathToConfigFile>/var/lib/tomcat7/fitman/QLMResponseSEMedService/WEB-INF/FITMAN/config.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.tableWrapper.AbstractCsvWrapper</javaClassForWrapper>
+</DataSource>
+
+</WrapperConfiguration>

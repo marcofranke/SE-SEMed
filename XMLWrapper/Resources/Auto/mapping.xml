@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mapping namespace="http://FITMAN.eu">
+	<ClassMapping className="Auto">
+		<ID>0</ID>
+	</ClassMapping>
+	
+
+	
+	<DatatypePropertyMapping propertyName="id" Unit="unknown">
+		<SubClass>Auto</SubClass>
+		<XMLTag>MeineAutos/Auto/id</XMLTag>
+	</DatatypePropertyMapping>
+
+
+<DatatypePropertyMapping propertyName="leistung" Unit="unknown">
+		<SubClass>Auto</SubClass>
+		<XMLTag>MeineAutos/Auto/leistung</XMLTag>
+	</DatatypePropertyMapping>
+	
+	<DatatypePropertyMapping propertyName="gewicht" Unit="unknown">
+		<SubClass>Auto</SubClass>
+		<XMLTag>MeineAutos/Auto/gewicht</XMLTag>
+	</DatatypePropertyMapping>
+	
+</Mapping >

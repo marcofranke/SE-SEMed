@@ -1,0 +1,1 @@
+select ?z where { ?a a <Person>. ?a <hatHaus> ?b. ?b <name2> ?z.}

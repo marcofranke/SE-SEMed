@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WrapperConfiguration>
+
+<DataSource>
+<pathToConfigFile>/var/lib/tomcat7/fitman/QLMResponseSEMedService/WEB-INF/Auto/config.properties</pathToConfigFile>
+<javaClassForWrapper>de.biba.wrapper.simpleXMLWrapper.XMLWrapper</javaClassForWrapper>
+</DataSource>
+
+
+</WrapperConfiguration>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MeineAutos>
+<Auto>
+<id> 5XGH8Kj </id>
+<gewicht> 1000 </gewicht>
+<leistung> 56 </leistung>
+</Auto>
+<Auto>
+<id> 5XGH8Kj </id>
+<gewicht> 1200 </gewicht>
+<leistung> 156 </leistung>
+</Auto>
+</MeineAutos>

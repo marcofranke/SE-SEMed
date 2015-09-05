@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mapping namespace="http://Fitman.eu">
+	<ClassMapping className="SpecificEnabler">
+		<ID>0</ID>
+		<XMLTag>row</XMLTag>
+	</ClassMapping>
+	
+
+<DatatypePropertyMapping propertyName="id" Unit="unknown">
+		<SubClass>SpecificEnabler</SubClass>
+		<XMLTag>table_data/row/id</XMLTag>
+	</DatatypePropertyMapping>
+	
+	
+	<DatatypePropertyMapping propertyName="name" Unit="unknown">
+		<SubClass>SpecificEnabler</SubClass>
+		<XMLTag>table_data/row/name</XMLTag>
+	</DatatypePropertyMapping>
+	
+	
+	<DatatypePropertyMapping propertyName="description" Unit="unknown">
+		<SubClass>SpecificEnabler</SubClass>
+		<XMLTag>table_data/row/description</XMLTag>
+	</DatatypePropertyMapping>
+	
+	
+	<DatatypePropertyMapping propertyName="link" Unit="unknown">
+		<SubClass>SpecificEnabler</SubClass>
+		<XMLTag>table_data/row/link</XMLTag>
+	</DatatypePropertyMapping>
+	
+	<DatatypePropertyMapping propertyName="link" Unit="unknown">
+		<SubClass>SpecificEnabler</SubClass>
+		<XMLTag>table_data/row/description</XMLTag>
+	</DatatypePropertyMapping>
+	
+	
+</Mapping >

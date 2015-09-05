@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<table_data name="SpecificEnabler">
+
+	<row>
+		<id>12</id>
+		<name>SEMed</name>
+		<description>SEMed is a mature middleware layer for semantic, virtual interoperability and integration specifical</description>
+		<link>http://catalogue.fitman.atosresearch.eu/enablers/semed</link>
+	</row>
+	<row>
+		<id >13</id>
+		<name>Shopfloor Data Collection</name>
+		<description>Shopfloor Data Collection</description>
+		<link>http://catalogue.fitman.atosresearch.eu/enablers/shopfloor-data-collection</link>
+	</row>
+	<row>
+		<id>14</id>
+		<name>Supply Chain &amp; Business Ecosystem Apps</name>
+		<description>Supply Chain &amp; Business Ecosystem Apps</description>
+		<link>http://catalogue.fitman.atosresearch.eu/enablers/supply-chain-business-ecosystem-apps</link>
+	</row>
+	<row>
+		<id>15</id>
+		<name>Unstructured and Social Data Analytics</name>
+		<description>Unstructured and Social Data Analytics</description>
+		<link>http://catalogue.fitman.atosresearch.eu/enablers/unstructured-and-social-data-analytics</link>
+	</row>
+</table_data>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Mapping>
+    <ClassMapping className="http://Fitman.eu#SpecificEnabler">
+        <Column valueType="xsd:string">Names.id</Column>
+        <Table>Names</Table>
+    </ClassMapping>
+    
+    
+    
+    <DatatypePropertyMapping propertyName="http://Fitman.eu#id" unit="">
+        <SubColumn valueType="xsd:string">Names.id</SubColumn>
+        <ObColumn>Names.id</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>Names</Table>
+    </DatatypePropertyMapping>
+    
+    <DatatypePropertyMapping propertyName="http://Fitman.eu#name" unit="">
+        <SubColumn valueType="xsd:string">Names.id</SubColumn>
+        <ObColumn>Names.name</ObColumn>
+        <ObType>xsd:string</ObType>
+        <Table>Names</Table>
+    </DatatypePropertyMapping>
+	
+		
+	
+</Mapping>

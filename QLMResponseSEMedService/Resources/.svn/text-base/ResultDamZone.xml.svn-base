@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<omi:omiEnvelope ttl="0.0" xmlns:odf="odf.xsd"
+	xmlns:omi="omi.xsd">
+	<omi:response>
+		<omi:result msgformat="odf">
+			<omi:return returnCode="200" />
+			<omi:requestId>REQ0000001</omi:requestId>
+			<omi:msg xsi:type="odf:ObjectsType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-06-17 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>1</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C12/15</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Escalão Jusante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Núcleo Barragem</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-06-17 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>90</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>s1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-06-17 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>3</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C20/25</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Escalão Montante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Paramento Montante até cota 200 bloco 1</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-06-17 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>90</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>s1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>5</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C16/20</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Escalão Montante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Núcleo Barragem</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>90</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>7</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C16/20</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Escalão Jusante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Núcleo Barragem</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>90</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>9</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C20/25</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Escalão Montante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Paramento Montante até cota 200 bloco 1</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>90</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>contractor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>11</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C25/30</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Viaduct 1 pilars</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Km 23+450</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>contractor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>10</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>S3</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>contractor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>13</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C12/15</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Viaduct 1 platform</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Km 23+450</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>contractor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-04 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>10</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>15</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C16/20</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Escalão Montante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Paramento montante, depois cota 200 bloco I</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>90</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>17</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C16/20</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Escalão jusante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Paramento montante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-09-09 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>28</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>S1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="Composition">
+					<odf:id />
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-06-17 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+				<odf:Object type="DamZone">
+					<odf:id />
+					<odf:InfoItem name="Concrete_Composition">
+						<odf:value>19</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Class">
+						<odf:value>C12/15</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Location">
+						<odf:value>Escalão Montante</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Zone">
+						<odf:value>Núcleo Barragem</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Provider">
+						<odf:value>designer</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="approvedDate">
+						<odf:value>2014-06-17 00:00:00</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Approver">
+						<odf:value>supervisor</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Age_to_Strength_Compression_Concrete_Class">
+						<odf:value>90</odf:value>
+					</odf:InfoItem>
+					<odf:InfoItem name="Slump_Classes">
+						<odf:value>s1</odf:value>
+					</odf:InfoItem>
+				</odf:Object>
+			</omi:msg>
+		</omi:result>
+	</omi:response>
+</omi:omiEnvelope>

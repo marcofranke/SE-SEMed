@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+	<xsd:complexType name="ClassMapping">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="Column" type="ColumnMapping"
+				maxOccurs="unbounded" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="Table" type="xsd:string" maxOccurs="1"
+				minOccurs="1"></xsd:element>
+			<xsd:element name="Conditions" type="Condition" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="className" type="xsd:string" use="required"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="ObjectPropertyMapping">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="SubColumn" type="ColumnMapping"
+				maxOccurs="unbounded" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="ObColumn" type="ColumnMapping"
+				maxOccurs="unbounded" minOccurs="1">
+			</xsd:element>
+			<xsd:choice maxOccurs="1" minOccurs="1">
+				<xsd:element name="Table" type="xsd:string"></xsd:element>
+				<xsd:element name="Join" type="MultiJoinedTable"></xsd:element>
+			</xsd:choice>
+			<xsd:element name="Conditions" type="Condition" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="propertyName" type="xsd:string"
+			use="required"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="DatatypePropertyMapping">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="SubColumn" type="ColumnMapping"
+				maxOccurs="unbounded" minOccurs="1"></xsd:element>
+			<xsd:element name="ObColumn" type="xsd:string" maxOccurs="1"
+				minOccurs="1"></xsd:element>
+			<xsd:element name="ObType" type="ValueType" minOccurs="1"
+				maxOccurs="1"></xsd:element>
+			<xsd:choice maxOccurs="1" minOccurs="1">
+				<xsd:element name="Table" type="xsd:string"></xsd:element>
+				<xsd:element name="Join" type="JoinedTable"></xsd:element>
+			</xsd:choice>
+			<xsd:element name="Conditions" type="Condition" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="propertyName" type="xsd:string"
+			use="required"></xsd:attribute>
+		<xsd:attribute name="unit" type="xsd:string" use="required"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:element name="Mapping">
+		<xsd:complexType>
+			<xsd:sequence minOccurs="1" maxOccurs="1">
+				<xsd:element name="ClassMapping" type="ClassMapping"
+					minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				<xsd:element name="ObjectPropertyMapping" type="ObjectPropertyMapping"
+					minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				<xsd:element name="DatatypePropertyMapping" type="DatatypePropertyMapping"
+					minOccurs="0" maxOccurs="unbounded"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+
+	<xsd:complexType name="JoinedTable">
+		<xsd:sequence>
+			<xsd:element name="FirstTable" type="xsd:string"
+				minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="SecondTable" type="xsd:string"
+				minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="JoinCondition" type="xsd:string"
+				minOccurs="1" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="joinType" type="JoinType" use="required"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="MultiJoinedTable">
+		<xsd:complexContent>
+	      <xsd:extension base="JoinedTable">
+	         <xsd:sequence>
+		         <xsd:element name="ThirdTable" type="xsd:string"
+					minOccurs="0" maxOccurs="1"></xsd:element>
+				 <xsd:element name="ExtendedCondition" type="xsd:string"
+					minOccurs="0" maxOccurs="unbounded"></xsd:element>
+	         </xsd:sequence>
+	           
+	      </xsd:extension>
+	   </xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="ColumnMapping">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="valueType" type="ValueType" use="required" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+
+	<xsd:simpleType name="ValueType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="xsd:string" />
+			<xsd:enumeration value="numeric" />
+			<xsd:enumeration value="date" />
+			<xsd:enumeration value="boolean" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Comparator">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EQ" />
+			<xsd:enumeration value="NE" />
+			<xsd:enumeration value="LT" />
+			<xsd:enumeration value="LE" />
+			<xsd:enumeration value="GT" />
+			<xsd:enumeration value="GE" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="JoinType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="left" />
+			<xsd:enumeration value="right" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="Condition">
+		<xsd:sequence>
+			<xsd:element name="Column" type="xsd:string" minOccurs="1"
+				maxOccurs="1"></xsd:element>
+			<xsd:element name="ValueType" type="ValueType" minOccurs="1"
+				maxOccurs="1"></xsd:element>
+			<xsd:element name="Value" type="xsd:string" minOccurs="1"
+				maxOccurs="1"></xsd:element>
+			<xsd:element name="Comparator" type="Comparator"
+				minOccurs="1" maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MediatorWebserviceService WSDL service -->
+
+  <service name="MediatorWebservice" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.mediator.biba.de"/>
+      <parameter name="wsdlServiceElement" value="MediatorWebserviceService"/>
+      <parameter name="schemaQualified" value="http://webservice.mediator.biba.de"/>
+      <parameter name="wsdlServicePort" value="MediatorWebservice"/>
+      <parameter name="className" value="de.biba.mediator.webservice.MediatorWebservice"/>
+      <parameter name="wsdlPortType" value="MediatorWebservice"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservice.mediator.biba.de" xmlns:retNS="http://webservice.mediator.biba.de" xmlns:rtns="http://webservice.mediator.biba.de" name="query" qname="operNS:query" returnQName="retNS:queryReturn" returnType="rtns:MediatorResult" soapAction="">
+        <parameter xmlns:pns="http://webservice.mediator.biba.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:jObject" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.mediator.biba.de" xmlns:retNS="http://webservice.mediator.biba.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllConcepts" qname="operNS:getAllConcepts" returnQName="retNS:getAllConceptsReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://webservice.mediator.biba.de" xmlns:retNS="http://webservice.mediator.biba.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="queryAsHTML" qname="operNS:queryAsHTML" returnQName="retNS:queryAsHTMLReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.mediator.biba.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:jObject" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.mediator.biba.de" xmlns:retNS="http://webservice.mediator.biba.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllDataPropertiesByConceptName" qname="operNS:getAllDataPropertiesByConceptName" returnQName="retNS:getAllDataPropertiesByConceptNameReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.mediator.biba.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.mediator.biba.de" xmlns:retNS="http://webservice.mediator.biba.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllObjectPropertiesByConceptName" qname="operNS:getAllObjectPropertiesByConceptName" returnQName="retNS:getAllObjectPropertiesByConceptNameReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.mediator.biba.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.mediator.biba.de" xmlns:retNS="http://webservice.mediator.biba.de" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllRangesForAObjectProperties" qname="operNS:getAllRangesForAObjectProperties" returnQName="retNS:getAllRangesForAObjectPropertiesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.mediator.biba.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.mediator.biba.de" xmlns:retNS="http://webservice.mediator.biba.de" xmlns:rtns="http://webservice.mediator.biba.de" name="getCurrentConnectedDataSources" qname="operNS:getCurrentConnectedDataSources" returnQName="retNS:getCurrentConnectedDataSourcesReturn" returnType="rtns:LightDataSourceDescription" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="getAllObjectPropertiesByConceptName getCurrentConnectedDataSources getAllConcepts query queryAsHTML getAllRangesForAObjectProperties getAllDataPropertiesByConceptName"/>
+
+      <arrayMapping xmlns:ns="http://webservice.mediator.biba.de" xmlns:cmp-ns="http://webservice.mediator.biba.de" qname="ns:ArrayOfArrayOf_xsd_string" type="java:java.lang.String[][]" innerType="cmp-ns:ArrayOf_xsd_string" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://webservice.mediator.biba.de" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://webservice.mediator.biba.de" qname="ns:LightDataSourceDescription" type="java:de.biba.mediator.webservice.LightDataSourceDescription" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://webservice.mediator.biba.de" qname="ns:MediatorResult" type="java:de.biba.mediator.webservice.MediatorResult" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

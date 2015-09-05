@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+<xsd:element name="InformationServices">
+<xsd:complexType>
+	<xsd:sequence>
+		<xsd:element name="Service" type="Service" minOccurs="1" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:complexType name="Service">
+	<xsd:sequence>
+		<xsd:element name="id" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="query" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="namespace" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="requestInterval" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name = "URLWebService" type ="xsd:string" minOccurs ="0" maxOccurs ="1" />
+		<xsd:element name="OutputWrapper" type="OutputWrapper" minOccurs="1" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="DataSource">
+<xsd:sequence>
+<xsd:element name="pathToConfigFile" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="javaClassForWrapper" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="OutputWrapper">
+<xsd:sequence>
+<xsd:element name="javaClassForStorage" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="configurationForStorage" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
