@@ -1,0 +1,260 @@
+options
+{
+   LOOKAHEAD = 1;
+   STATIC = false;
+}
+
+PARSER_BEGIN(SimpleQueryParser)
+package de.biba.queryLanguage;
+import java.io.StringReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import de.biba.div.CompareOperator;
+import de.biba.div.Datatype;
+import de.biba.div.constraints.SimplePropertyConstraint;
+import de.biba.div.StringDatatype;
+import de.biba.div.constraints.ClassConstraint;
+import de.biba.div.constraints.PropertyConstraint;
+import de.biba.div.constraints.Constraint;
+import de.biba.div.constraints.ConstraintList;
+import de.biba.div.IQuery;
+import de.biba.div.InputQuery;
+import de.biba.div.constraints.OrConstraint;
+import de.biba.div.constraints.insert.ClassInsertConstraint;
+import de.biba.div.constraints.insert.InsertConstraint;
+import de.biba.div.constraints.insert.PropertyInsertConstraint;
+import de.biba.div.constraints.insert.SimplePropertyInsertConstraint;
+import de.biba.div.OutputQuery;
+import de.biba.div.BooleanDatatype;
+import de.biba.div.NumericDatatype;
+
+@SuppressWarnings(value={"all"})
+public class SimpleQueryParser
+{
+	public static void main(String[] args){
+		byte byt_buffer[] = new byte[500]; 
+      		while(true){
+      			System.out.print("Bitte Abfrage eingeben:");
+      			try {
+      			   int read = System.in.read(byt_buffer,0,500);
+      			   if(read <=2)
+      				   continue;
+      			   String query = new String(byt_buffer, 0, read-2);
+      			   StringReader sr = new StringReader(query);
+      			   SimpleQueryParser sqp = new SimpleQueryParser(sr);
+      			   sqp.parse(true, false);
+      			   sr.close();
+      			   if(query.equals("exit"))
+      				   break;
+      			}
+      			catch(Exception e) {
+      					e.printStackTrace();
+      			} 
+		}				
+	}
+
+}
+PARSER_END(SimpleQueryParser)
+
+IQuery parse(boolean pAllowQuerying, boolean pAllowWriting):{InputQuery res= null; Token t1 = null; Token t2=null; String base = null; ConstraintList el = null; int x = -1; boolean b = true;}
+{
+	(<BASE> t1=<URI>{base = t1.image.substring(1,t1.image.length()-1)+"#";})?
+	((<SELECT> 
+		{if(!pAllowQuerying)
+			throw new ParseException("Unallowed Operation");
+		OutputQuery result = new OutputQuery();}
+		(<DISTINCT> {result.setDistinct(true);})?
+		(t1=<VARNAME> (<LBRACERT> t2=<UNIT> <RBRACERT>)?
+			{if(t2!=null)
+				result.addColumn(t1.image, t2.image);
+			else
+				result.addColumn(t1.image);
+				
+			t2=null;}
+			)+
+			
+	<WHERE>
+		<LBRACE>  el=Expression(base) {result.setConstraint(el);}
+		<RBRACE>
+	(x=Limit() {result.setLimit(x);})? (x=Offset(){result.setOffset(x);})?
+	(<ORDERBY> t1=<VARNAME> (b=sortingOrder())? {result.addOrdering(t1.image, b); b = true;}
+	(<KOMMA> t1=<VARNAME> (b=sortingOrder())? {result.addOrdering(t1.image, b); b = true;})*
+	)?
+	{return result;}
+	) | 
+	(
+	<INSERT>
+	{
+		res = new InputQuery();
+	}
+	<LBRACE> 
+	{InsertConstraint ic;}
+		(ic=InsertTriple(base) {res.addConstraint(ic);})+
+	<RBRACE>
+	{
+		return res;
+	}
+	)
+	)
+}
+
+InsertConstraint InsertTriple(String base):{Token t1,t2=null,t3=null;Datatype dt;}
+{
+	t1=<VARNAME> ((<A> t2=<URI> <DOT> {
+	if(base!=null)
+		return new ClassInsertConstraint(t1.image, base+t2.image.substring(1,t2.image.length()-1));
+	else
+		return new ClassInsertConstraint(t1.image, t2.image.substring(1,t2.image.length()-1));}) 
+	|
+	(t2 = <URI> ((t3=<VARNAME> <DOT> {
+	if(base!=null)
+		return new PropertyInsertConstraint(t1.image, base+t2.image.substring(1,t2.image.length()-1), t3.image);
+	else
+		return new PropertyInsertConstraint(t1.image, t2.image.substring(1,t2.image.length()-1), t3.image);}) |
+	(dt= value() (<LBRACERT>t3=<UNIT><RBRACERT>)? <DOT> {
+	if(base!=null)
+		return new SimplePropertyInsertConstraint(t1.image,base+t2.image.substring(1,t2.image.length()-1),dt,t3!=null?t3.image:null);
+	else
+		return new SimplePropertyInsertConstraint(t1.image,t2.image.substring(1,t2.image.length()-1),dt,t3!=null?t3.image:null);})
+	))
+	)
+}
+
+ConstraintList Expression(String base):{ConstraintList el = new ConstraintList(); Constraint e = null;Constraint or = null;}
+{
+	(e=Triple(base) | e=ListExpression(base)) (<OR>  or= Expression(base))? {if(or==null)el.addExpression(e); else el.addExpression(new OrConstraint(e,or));} ({or=null;}(e=Triple(base) | e=ListExpression(base)) (<OR> or=Expression(base))? {if(or==null)el.addExpression(e); else el.addExpression(new OrConstraint(e,or));} ({or=null;}))*
+	{return el;}
+}
+
+Constraint Triple(String base):{Token t1,t2=null,t3=null;Datatype dt;}{
+	t1=<VARNAME> ((<A> t2=<URI> <DOT> {
+	if(base!=null)
+		return new ClassConstraint(t1.image, base+t2.image.substring(1,t2.image.length()-1));
+	else
+		return new ClassConstraint(t1.image, t2.image.substring(1,t2.image.length()-1));}) 
+	|
+	(t2 = <URI> ((t3=<VARNAME> <DOT> {
+	if(base!=null)
+		return new PropertyConstraint(t1.image, base+t2.image.substring(1,t2.image.length()-1), t3.image);
+	else
+		return new PropertyConstraint(t1.image, t2.image.substring(1,t2.image.length()-1), t3.image);}) |
+	(t3=<OPERATOR> dt= value() <DOT> {
+	CompareOperator op = CompareOperator.EQUALS;
+	if(t3.image.equals("=="))
+		op = CompareOperator.EQUALS;
+	else if(t3.image.equals("!="))
+		op = CompareOperator.UNEQUALS;
+	else if(t3.image.equals(">="))
+		op = CompareOperator.GREATEREQUAL;
+	else if(t3.image.equals(">"))
+		op = CompareOperator.GREATER;
+	else if(t3.image.equals("<="))
+		op = CompareOperator.LESSEQUAL;
+	else if(t3.image.equals("<"))
+		op = CompareOperator.LESS;
+	if(base!=null)
+		return new SimplePropertyConstraint(t1.image,base+t2.image.substring(1,t2.image.length()-1),dt,op);
+	else
+		return new SimplePropertyConstraint(t1.image,t2.image.substring(1,t2.image.length()-1),dt,op);})
+	))
+	)
+	
+}
+
+ConstraintList ListExpression(String base):{ConstraintList le;}{
+	<LBRACKET> le=Expression(base) <RBRACKET>
+	{return le;}
+}
+
+void filter():{}{
+	<LBRACE>
+	<VARNAME> <OPERATOR> value() 
+	<RBRACE>
+}
+
+Datatype value():{Token t; Datatype v;}
+{
+	(t=<DOUBLEVALUE> {v = new NumericDatatype(Double.parseDouble(t.image));} | 
+	t=<INTVALUE> {v = new NumericDatatype(Integer.parseInt(t.image));} |
+	(<STRINGBEGIN> t=<STRINGVALUE> <STRINGEND> {v = new StringDatatype(t.image);}) | 
+	t=<BOOLEANVALUE> {v = new BooleanDatatype(Boolean.parseBoolean(t.image));} )
+	
+	{return v;}
+}
+
+int Limit():{Token t1;}
+{
+	<LIMIT> t1=<INTVALUE> 
+	{return Integer.parseInt(t1.image);}
+}
+
+int Offset():{Token t;}
+{
+	<OFFSET> t=<INTVALUE>
+	{return Integer.parseInt(t.image);}
+}
+
+boolean sortingOrder():{Token t;}{
+	t = <SORTORDER>
+	{if(t.image.toLowerCase().equals("asc")) return true; else return false;}
+}
+
+SKIP:{ " " | "\n" | "\t"}
+
+TOKEN[IGNORE_CASE]:{
+	<SORTORDER: "ASC" | "DESC" > |
+	<ORDERBY: "ORDERBY"> |
+	<BASE: "BASE"> |
+	<LIMIT: "LIMIT"> |
+	<OFFSET: "OFFSET"> |
+	<WHERE: "WHERE"> |
+	<SELECT: "SELECT"> |
+	<INSERT: "INSERT"> |
+	<OPTIONAL: "OPTIONAL"> |
+	<FILTER: "FILTER">|
+	<DISTINCT: "DISTINCT">|
+	<OR: "OR"> |
+	<AND: "AND"> |
+	<BOOLEANVALUE: ("true"|"false") > |
+	<A: "a">
+}
+
+TOKEN:{
+	<DATE: <DIGIT><DIGIT><DIGIT><DIGIT>(<MINUS> | <SLASH>)<DIGIT><DIGIT>(<MINUS> | <SLASH>)<DIGIT><DIGIT>> |
+	<UNDERSCORE: "_"> |
+	<HASH: "#"> |
+	<MINUS: "-"> |
+	<COLON: ":"> |
+	<SLASH: "/"> |
+	<LBRACKET: "("> |
+	<RBRACKET: ")"> |
+	<DOT: "."> |
+	<OPERATOR: "!=" | "<" | "<=" | ">" | ">=" | "=="> |
+	<DOUBLEVALUE: (<DIGIT>)+<DOT>(<DIGIT>)+ >|
+	<INTVALUE: (<DIGIT>)+ >|
+	<STRINGBEGIN : "\"">:STRING |
+	<URI: "<" <CHAR> (<CHAR> | <DIGIT> | <COLON> | <DOT> | <SLASH> |<UNDERSCORE>| <HASH> | <MINUS>)* ">" > |
+	<KOMMA: ",">|
+	<SEMICOLON: ";"> |
+	<VARNAME: <QUESTIONMARK><CHAR>(<CHAR> | <DIGIT>)* > |
+	<CHAR: (["a"-"z"] | ["A"-"Z"]) > |
+	<DIGIT: ["0"-"9"]> |
+	<QUESTIONMARK: "?"> |
+	<LBRACE: "{"> |
+	<RBRACE: "}"> |
+	<LBRACERT: "["> :UNITSTATE
+	
+}
+
+<STRING> TOKEN:{
+	<STRINGVALUE: (~["\""])+ > |
+	<STRINGEND: "\""> : DEFAULT
+}
+
+<UNITSTATE> TOKEN:{
+	<UNIT: (~["]"])+ > |
+	<RBRACERT: "]"> : DEFAULT
+}

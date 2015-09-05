@@ -1,0 +1,24 @@
+Query ::= 'BASE' Uri 'SELECT' 'DISTINCT'? (Varname ('[' Unit ']')?)+ 'WHERE' '{' Expression '}' Limit? Offset?  Order?
+Expression ::= Triple | Listexpression ('OR' Expression)? ( Triple | Listexpression ('OR' Expression)?)*
+Triple ::= Varname ('A' Uri) | (Uri (Varname | (Operator Value))) '.'
+Value ::= Doublevalue | Intvalue | Booleanvalue  | Stringvalue
+Listexpression ::= '(' Expression ')'
+Limit ::= 'LIMIT' Intvalue
+Offset ::= 'OFFSET' Intvalue
+Order ::= 'ORDERBY' Varname ('ASC' | 'DESC')? (','  Varname ('ASC' | 'DESC')?)*
+
+
+Booleanvalue ::= 'true' | 'false'
+Date ::= Digit Digit Digit Digit Dateseperator Digit Digit DateSeperator Digit Digit
+Dateseperator ::= '-' | '/'
+Digit ::= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' 
+Operator ::= '!=' | '<' | '<=' | '>' | '>=' | '=='
+Doublevalue ::= Digit+ '.' Digit+
+Intvalue ::= Digit+
+Varname ::= '?' Char (Char | Digit)*
+Char ::= Lowerchar | Upperchar
+Lowerchar ::= 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z'
+Upperchar ::= 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+Uri ::= '<' Char (Char | DIGIT | ':' | '.' | '/' | '_' | '#' | '-')* '>'
+Unit ::= 'TODO'
+Stringvalue ::= 'TODO'

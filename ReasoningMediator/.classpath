@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="libs/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="libs/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-adapters-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-tests.jar"/>
+	<classpathentry kind="lib" path="libs/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="libs/slf4j-api-1.4.2.jar"/>
+	<classpathentry kind="lib" path="libs/slf4j-log4j12.jar"/>
+	<classpathentry kind="lib" path="libs/slf4j-nop-1.4.2.jar"/>
+	<classpathentry kind="lib" path="libs/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="libs/jta.jar"/>
+	<classpathentry kind="lib" path="libs/log4j.jar"/>
+	<classpathentry kind="lib" path="libs/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="libs/tools.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

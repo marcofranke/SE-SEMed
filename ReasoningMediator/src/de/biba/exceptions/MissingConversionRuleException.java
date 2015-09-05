@@ -1,0 +1,37 @@
+package de.biba.exceptions;
+
+/**[Reasoning Mediator. This is a mediation based data integration approach which aggregate data sources via Wrapper]
+Copyright (C) [2014  [Marco Franke (BIBA-Bremer Institut für Produktion und Logistik GmbH)]
+
+This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    **/
+
+/**
+ * Exception die geworfen wird, wenn keine Konvertierungsregeln vorhanden sind einen Wert in eine andere Einheit umzurechnen.
+ * @author KRA
+ *
+ */
+public class MissingConversionRuleException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	public MissingConversionRuleException(String string) {
+		super(string);
+	}
+
+	public MissingConversionRuleException(String from, String to) {
+		super("No Conversion Rule from "+from +" to "+to+" avaiable!");
+	}
+
+}
