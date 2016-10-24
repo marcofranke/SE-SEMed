@@ -25,6 +25,7 @@ import de.biba.ontology.datatypes.Datatype;
 import de.biba.ontology.datatypes.NumericDatatype;
 import de.biba.ontology.datatypes.StringDatatype;
 
+
 @SuppressWarnings(value={"all"})
 public class SimpleQueryParser implements SimpleQueryParserConstants {
         public static void main(String[] args){

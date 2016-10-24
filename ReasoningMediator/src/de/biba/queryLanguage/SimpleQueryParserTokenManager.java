@@ -847,8 +847,14 @@ private int jjMoveNfa_0(int startState, int curPos)
                      jjCheckNAddTwoStates(22, 23);
                   break;
                case 25:
-               case 26:
                   if ((0x7fffffe07fffffeL & l) == 0L)
+                     break;
+                  if (kind > 35)
+                     kind = 35;
+                  jjCheckNAdd(26);
+                  break;
+               case 26:
+                  if ((0x7fffffe87fffffeL & l) == 0L)
                      break;
                   if (kind > 35)
                      kind = 35;

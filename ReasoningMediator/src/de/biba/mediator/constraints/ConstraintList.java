@@ -11,23 +11,6 @@ import org.apache.log4j.Logger;
 import de.biba.mediator.QuerySolution;
 import de.biba.ontology.ComplexOntClass;
 import de.biba.ontology.OntModel;
-/**[Reasoning Mediator. This is a mediation based data integration approach which aggregate data sources via Wrapper]
-Copyright (C) [2014  [Marco Franke (BIBA-Bremer Institut für Produktion und Logistik GmbH)]
-
-This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
-This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    **/
 
 /**
  * Eine Liste von Constraints, welche linear nacheinander abgearbeitet werden.
@@ -130,11 +113,36 @@ public class ConstraintList implements Constraint {
 				result = results.get(i);
 			}
 			else{
-				result.cartesianProduct(results.get(i));
+				QuerySolution toBeCartesian = results.get(i);
+				if (isItNotEmptyData(toBeCartesian)){
+				result.cartesianProduct(toBeCartesian);
+				}
+				else{
+					return createEmptyResult(results, result);
+				}
 			}
 		}
 		logger.info("Ingesamt dauerte es "+(System.currentTimeMillis()-time)+" Millisekunden");
 		return result;
+	}
+
+	private QuerySolution createEmptyResult(List<QuerySolution> results, QuerySolution result) {
+		QuerySolution finalEmptyResult = new QuerySolution();
+		for(QuerySolution solution: results){
+		for ( QuerySolution.Column columnName: solution.columnNames)
+			finalEmptyResult.addColumn(columnName.name);
+		}
+		return finalEmptyResult;
+	}
+
+	private boolean isItNotEmptyData(QuerySolution toBeCartesian) {
+		if(toBeCartesian.data.isEmpty()){
+			return false;
+		}
+		if (toBeCartesian.data.get(0).isEmpty()){
+			return false;
+		}
+		return true;
 	}
 
 	@Override
